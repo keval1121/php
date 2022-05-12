@@ -1,0 +1,73 @@
+	<form method="post">
+		<table >
+			<tr>
+				<td>name :</td>
+				<td>
+					<input type="text" name="name" value="<?php echo @$row_data['name'];?>">
+				</td>
+			</tr>
+
+			<tr>
+				<td>address :</td>
+				<td>
+					<input type="text" name="address" value="<?php echo @$row_data['address'];?>">
+				</td>
+			</tr>
+
+			<tr>
+				<td>city :</td>
+				<td>
+					<select name="city" value="<?php echo @$row_data['city'];?>">
+					<option name="city" value="">------select city------!</option>
+					<option name="city" value="surat">surat</option>
+					<option name="city" value="vapi">vapi</option>
+					<option name="city" value="valsad">valsad</option>
+					<option name="city" value="bhavnagar">bhavnagar</option>
+					<option name="city" value="vadodra">vadodra</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>gender :</td>
+				<td>
+					<input type="radio" name="gender" value="male"  <?php if(@$row_data['gender']=="male"){ ?> checked <?php } ?>> Male
+					<input type="radio" name="gender" value="female" <?php if(@$row_data['gender']=="female"){ ?> checked <?php } ?>>Female
+					<input type="radio" name="gender" value="other" <?php if(@$row_data['gender']=="other"){ ?> checked <?php } ?>>other
+
+
+				</td>
+			</tr>
+
+			<tr>
+				<td>hobby :</td>
+				<td>
+					<input type="checkbox" name="hobby[]" value="rading" <?php if (isset($_GET['u_ID'])){ if (in_array("rading",$hobby_arry)) { ?> checked="" <?php } } ?> >rading<br>
+					<input type="checkbox" name="hobby[]" value="criket" <?php  if (isset($_GET['u_ID'])){ if (in_array("criket",$hobby_arry)) { ?> checked="" <?php } } ?>>criket<br>
+					<input type="checkbox" name="hobby[]" value="voliball" <?php  if (isset($_GET['u_ID'])){ if (in_array("voliball",$hobby_arry)) { ?> checked="" <?php } } ?>>voliball<br>
+					<input type="checkbox" name="hobby[]" value="football" <?php  if (isset($_GET['u_ID'])){ if (in_array("football",$hobby_arry)) { ?> checked="" <?php } } ?>>football<br>
+
+				</td>
+			</tr>
+
+			<tr>
+				<td>email :</td>
+				<td>
+					<input type="email" name="email" value="<?php echo @$row_data['email'];?>">
+				</td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td>
+					<input type="password" name="password" value="<?php echo @$row_data['password'];?>">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<input type="submit"  name="save" <!-- <?php if (isset($_GET['u_ID'])) { ?> value= "update" <?php }else{ ?> value="save" <?php } ?> -->>
+				</td>
+			</tr>
+			
+		</table>
+	</form>
